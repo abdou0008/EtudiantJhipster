@@ -108,6 +108,7 @@
   },
   "defaultProject": "itsandraetudiant",
   "cli": {
+    "analytics": false,
     "cache": {
       "enabled": true,
       "path": "./target/",
