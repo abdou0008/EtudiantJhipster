@@ -33,13 +33,13 @@
       <thead>
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
           <th scope="col" jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="matricule"><span>Matricule</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="nom"><span>Nom</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="prenom"><span>Prenom</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="matricule"><span>Matricule</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="date"><span>Date</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="nomNiveau.nomNiveau"><span>Nom Niveau</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="nomFiliere.nomFiliere"><span>Nom Filiere</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="nomNiveau.nomNiveau"><span>Nom Niveau</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="nomPays.nomPays"><span>Nom Pays</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="date"><span>Date</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -48,18 +48,18 @@
           <td>
             <a [routerLink]="['/etudiant', etudiant.id, 'view']">{{ etudiant.id }}</a>
           </td>
+          <td>{{ etudiant.matricule }}</td>
           <td>{{ etudiant.nom }}</td>
           <td>{{ etudiant.prenom }}</td>
-          <td>{{ etudiant.matricule }}</td>
           <td>{{ etudiant.date | formatMediumDate }}</td>
-          <td>
-            <div *ngIf="etudiant.nomNiveau">
-              <a [routerLink]="['/niveau', etudiant.nomNiveau?.id, 'view']">{{ etudiant.nomNiveau?.nomNiveau }}</a>
-            </div>
-          </td>
           <td>
             <div *ngIf="etudiant.nomFiliere">
               <a [routerLink]="['/filiere', etudiant.nomFiliere?.id, 'view']">{{ etudiant.nomFiliere?.nomFiliere }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="etudiant.nomNiveau">
+              <a [routerLink]="['/niveau', etudiant.nomNiveau?.id, 'view']">{{ etudiant.nomNiveau?.nomNiveau }}</a>
             </div>
           </td>
           <td>
